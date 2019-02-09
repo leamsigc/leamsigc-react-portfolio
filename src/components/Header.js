@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import headerBackgroundimg from '../images/leamsigcHomeBG.svg';
 export default function Header() {
+	const [menuState] = useState(0);
+
 	return (
 		<div style={HeaderContainerStyle}>
 			<header style={headerStyle}>
 				<div className="logo__container">
 					Leam<span className="dark-letters">sigc</span>
 				</div>
+				<div className="toggle__container" onClick={() => prop.menuToggler('open', this)}>
+					<span className="menu__bar" />
+				</div>
+				<div className={`nav__background `} />
 				<div className="container">
 					<h1 className="title">
 						Front & Back

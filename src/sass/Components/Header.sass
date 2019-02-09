@@ -16,6 +16,60 @@ header
     font-size: 1.5rem
     .dark-letters
         color: var(--dark-color)
+.toggle__container
+    background: var(--main-color)
+    padding: 0 1rem
+    height: 4rem
+    width: 4rem
+    border-radius: 50%
+    z-index: 2000
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1)
+    text-align: center
+    cursor: pointer
+    position: fixed
+    top: 2rem
+    right: 3rem
+    &:hover
+        .menu__bar:after
+            top: -0.8rem
+        .menu__bar:before
+            bottom: -0.8rem
+    .menu__bar
+        width: 2rem
+        height: 2px
+        background: var(--white-color)
+        display: block
+        position: relative
+        margin-top: 2rem
+        &:after,
+        &:before
+            transition: all 0.3s ease-in-out
+            display: inline-block
+            content: ''
+            width: 2rem
+            height: 2px
+            background: var(--white-color)
+        &:after
+            position: absolute
+            top: -.6rem
+            left: 0rem
+        &:before
+            position: absolute
+            bottom: -.6rem
+            left: 0rem
+.nav__background
+    background: radial-gradient(var(--main-color), var(--secondary-color))
+    width: 4rem
+    height: 4rem
+    border-radius: 50%
+    z-index: 500
+    position: fixed
+    top: 2rem
+    right: 3rem
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1)
+    &.menu__open
+        transform: scale(80)
+
 .title
     text-align: center
     width: 50%
