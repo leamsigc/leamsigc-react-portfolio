@@ -10,10 +10,13 @@
                     ]
                 }
             }
-        ]
+        ],
+        "stage-2",
+        "latest",
+        "react"
     ],
-    // "plugins": [
-    //     "syntax-dinamic-import",
-    //     "transform-class-properties"
-    // ]
+    "plugins": [
+        "syntax-dynamic-import",
+        "transform-class-properties"
+    ]
 }
