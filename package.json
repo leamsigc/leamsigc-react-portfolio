@@ -1,0 +1,28 @@
+{
+	"name": "ismael-portfolioweb",
+	"version": "1.0.0",
+	"description": "Second version of my personal portfolio web ",
+	"main": "./src/index.js",
+	"scripts": {
+		"start": "parcel src/index.html --open"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/leamsigc/leamsigc-react-portfolio.git"
+	},
+	"keywords": ["reactjs", "react", "parcel-react", "parceljs-reactjs"],
+	"author": "Ismael garcia",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/leamsigc/leamsigc-react-portfolio/issues"
+	},
+	"homepage": "https://github.com/leamsigc/leamsigc-react-portfolio#readme",
+	"dependencies": {
+		"react": "^16.8.1",
+		"react-dom": "^16.8.1"
+	},
+	"devDependencies": {
+		"parcel-bundler": "^1.11.0",
+		"sass": "^1.17.0"
+	}
+}
