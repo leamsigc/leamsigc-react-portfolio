@@ -17,6 +17,11 @@ export default function Header() {
 							<br /> With you’r business goals on mint.
 						</p>
 					</h1>
+					<div className="btn-container">
+						<a href="#" className="btn btn-main">
+							Start Your Project
+						</a>
+					</div>
 				</div>
 			</header>
 		</div>
