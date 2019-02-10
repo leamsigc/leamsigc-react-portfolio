@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import headerBackgroundimg from '../images/leamsigcHomeBG.svg';
-
+import SVGWaves from './SVGWaves';
 export default class Header extends Component {
 	constructor() {
 		super();
@@ -45,6 +45,7 @@ export default class Header extends Component {
 						</div>
 					</div>
 				</header>
+				<SVGWaves />
 			</div>
 		);
 	}
@@ -52,11 +53,11 @@ export default class Header extends Component {
 
 const headerStyle = {
 	background: `url(${headerBackgroundimg})`,
-	backgroundAttachment: 'fixed',
 	backgroundPosition: 'center',
 	backgroundSize: 'cover',
 	backgroundRepeat: 'no-repeat'
 };
 const HeaderContainerStyle = {
+	minHeight: '100vh',
 	background: 'linear-gradient(to right ,#625ACA,#AB5CC6)'
 };
