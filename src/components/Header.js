@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import headerBackgroundimg from '../images/leamsigcHomeBG.svg';
 import SVGWaves from './SVGWaves';
+import NavBar from './NavBar';
 export default class Header extends Component {
 	constructor() {
 		super();
@@ -17,6 +18,7 @@ export default class Header extends Component {
 	render() {
 		return (
 			<div style={HeaderContainerStyle}>
+				<NavBar menuStatusClass={`${this.state.menuStatus === 'open' ? 'menu__open' : ''}`} />
 				<header style={headerStyle}>
 					<div className="logo__container">
 						Leam<span className="dark-letters">sigc</span>
@@ -36,6 +38,7 @@ export default class Header extends Component {
 								<br /> Need a website or a simple fix for your problem?
 								<br /> Get a beautiful and functional website
 								<br /> With you’r business goals on mint.
+								<br /> Web  Design and Development. 
 							</p>
 						</h1>
 						<div className="btn-container">
