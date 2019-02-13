@@ -38,7 +38,7 @@ export default class Header extends Component {
 								<br /> Need a website or a simple fix for your problem?
 								<br /> Get a beautiful and functional website
 								<br /> With you’r business goals on mint.
-								<br /> Web  Design and Development. 
+								<br /> Web Design and Development.
 							</p>
 						</h1>
 						<div className="btn-container">
@@ -61,6 +61,7 @@ const headerStyle = {
 	backgroundRepeat: 'no-repeat'
 };
 const HeaderContainerStyle = {
+	position: 'relative',
 	minHeight: '100vh',
 	background: 'linear-gradient(to right ,#625ACA,#AB5CC6)'
 };
