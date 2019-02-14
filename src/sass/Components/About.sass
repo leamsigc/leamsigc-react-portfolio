@@ -3,6 +3,14 @@
     text-align: center
     background: var(--white-color)
     padding: 8rem 0
+    position: relative
+    .svg__container
+        svg
+            .cls-1,
+            .cls-2
+                fill: rgba($dark-color,0.6)    
+            .cls-3
+                fill: var(--dark-color)
 .title-sub
     font-size: 2rem
     font-weight: 900
@@ -10,7 +18,7 @@
         margin-top: 1rem
         display: block
         color: var(--main-color)
-        font-weight: 300
+        font-weight: 400
 .description
     margin-top: 2rem
     width: 50%
@@ -18,3 +26,39 @@
     margin-right: auto
     line-height: 1.5
     color: var(--silver-color)
+    font-weight: 300
+.cards
+    background: var(--white-color)
+    margin: 6rem 0
+    padding: 2rem 0
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    &__item
+        background: var(--white-color)
+        flex: 0 0 360px
+        box-shadow: 0 20px 40px 0 rgba(169,171,193,.3)
+        border-radius: 5px
+        color: var(--dark-color)
+        padding: 1rem
+        transition: all 0.3s ease-in-out
+        &:hover
+          box-shadow: 0 40px 60px 0 rgba(169,171,193,.6)  
+          transform: translateY(-10px)
+        &--title
+            color: var(--main-color)
+            margin-top: 1rem
+            padding: 1rem 0
+            font-size: 1.3rem
+        &--desc
+            font-weight: 300
+            padding: 1rem 0.5rem
+        &--icon
+            width: 100%
+            padding: 1rem 0
+            display: flex
+            justify-content: center
+            align-items: center
+            img
+                max-width: 100px
+                height: 100px

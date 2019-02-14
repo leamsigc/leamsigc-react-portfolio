@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import About from './About';
+import Projects from './Projects';
 import SVGWaves from './SVGWaves';
 export default class App extends Component {
 	constructor() {
@@ -15,6 +16,7 @@ export default class App extends Component {
 			<div>
 				<Header />
 				<About />
+				<Projects />
 			</div>
 		);
 	}
