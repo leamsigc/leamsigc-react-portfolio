@@ -1,3 +1,55 @@
 .projects
     padding: 8rem 0
     background: var(--dark-color)
+.portfolio__item
+    min-height: 80vh
+    padding: 4rem 2rem
+    @supports (display: grid)
+        display: grid
+        grid-template-columns: repeat(3,minmax(100px,1fr))
+        grid-template-rows: repeat(4,minmax(100px,1fr))
+    &--role
+        display: flex
+        justify-content: center
+        align-items: flex-end
+        padding: 0.5rem 1rem
+        font-weight: 700
+        letter-spacing: 1px
+        font-size: 1rem
+
+    &--name
+        text-align: center
+        font-size: 2.2rem
+        padding-top: 1rem
+        font-weight: 700
+        letter-spacing:1.4px
+        line-height: 1.5
+    &--img
+        
+        background: linear-gradient(to top , var(--main-color),var(--secondary-color))
+        border-radius: 5px
+        box-shadow: 10px 10px 10px -10px rgba(#000,0.3)
+        grid-row-start: 1
+        grid-row-end: 5
+        grid-column-start: 2
+        grid-column-end: 4
+        position: relative
+        &:after
+            display: block
+            content:''
+            background: linear-gradient(to bottom , rgba(#080013,0.6),rgba(#080013,0.6))
+            position: absolute
+            top: 0
+            bottom: 0
+            right: 0
+            left: 0
+            border-radius: 5px
+        &___gif
+            width: 100%
+            display: block
+            height: 100%
+            z-index: -1
+            border-radius: 5px
+    .btn-container
+        width: 100%
+    
