@@ -10,7 +10,12 @@
 		"type": "git",
 		"url": "git+https://github.com/leamsigc/leamsigc-react-portfolio.git"
 	},
-	"keywords": ["reactjs", "react", "parcel-react", "parceljs-reactjs"],
+	"keywords": [
+		"reactjs",
+		"react",
+		"parcel-react",
+		"parceljs-reactjs"
+	],
 	"author": "Ismael garcia",
 	"license": "ISC",
 	"bugs": {
@@ -18,6 +23,7 @@
 	},
 	"homepage": "https://github.com/leamsigc/leamsigc-react-portfolio#readme",
 	"dependencies": {
+		"http2": "^3.3.7",
 		"react": "^16.8.1",
 		"react-dom": "^16.8.1"
 	},
