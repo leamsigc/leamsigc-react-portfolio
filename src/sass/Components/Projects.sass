@@ -1,13 +1,32 @@
 .projects
     background: var(--dark-color)
     .container
-        padding: 8rem 0
+        padding: 2rem 0 0
+        width: 100%
+        &.full
+            &:nth-child(3)
+                background: red !important
+
 .container-portfolio
     position: relative
+    &.dark-svg
+        .cls-1 
+        fill: rgba($letter-color,0.04)              
+        .cls-2 
+            fill: rgba($letter-color,0.35)              
+        .cls-3 
+            fill: var(--letter-color)
+    &:last-of-type
+        // background: $blue-color
+        background: var(--letter-color)
+        .btn-secondary
+            border-color: #fff
+        svg
+            fill: var(--white-color)
+           
 .portfolio__item
-    
     min-height: 80vh
-    padding: 6rem 2rem
+    padding: 6rem 2rem 10rem
     @supports (display: grid)
         display: grid
         grid-template-columns: repeat(3,minmax(100px,1fr))
@@ -15,12 +34,15 @@
     
     &.reverse
         background: var(--white-color)
-        color: var(--dark-color)
+        color: var(--letter-color)
         .portfolio__item--img
             grid-row-start: 1
             grid-row-end: 5
             grid-column-start: 1
             grid-column-end: 3
+        .btn-container
+            grid-column-start: 3
+            grid-column-end: 4
 
     &--role
         display: flex
@@ -38,6 +60,23 @@
         font-weight: 700
         letter-spacing:1.4px
         line-height: 1.5
+    &--desc
+        text-align: center
+        font-weight: 300
+        line-height: 1.5
+        font-style: italic
+    &--links
+        display: flex
+        justify-content: center
+        align-items: center
+        max-height: 50px
+        i
+            margin-left:1rem
+        svg
+            width: 40px
+            height: 40px
+            fill: var(--letter-color)
+
     &--img
         //background: linear-gradient(to top , var(--main-color),var(--secondary-color))
         border-radius: 5px
