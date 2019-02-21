@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MendozaImg from '../images/MendozaRoofingWilmingtonNc.gif';
 import LeamsigcImg from '../images/leamsigcWebDeveloperDaytonaBeach.gif';
 import SVGWaves from './SVGWaves';
+import { Link } from 'react-router-dom';
 export default class Projects extends Component {
 	render() {
 		const portfolio = [
@@ -11,7 +12,7 @@ export default class Projects extends Component {
 				roleDsg: ' UX/UI Designer',
 				link: 'https://leamsigc.com/',
 				github: 'https://github.com/leamsigc/smartCell',
-				learnMore: '/smartcellrepair',
+				learnMore: '/contact',
 				img: LeamsigcImg,
 				grid: 'noreverse',
 				position: 'top',
@@ -23,7 +24,7 @@ export default class Projects extends Component {
 				github: 'https://github.com/leamsigc/MendozaRoofingCompany',
 				roleDev: 'Solo Developer  ',
 				roleDsg: ' UX/UI Designer',
-				learnMore: '/mendozaroofingcompany',
+				learnMore: '/contact',
 				img: MendozaImg,
 				grid: 'reverse',
 				position: 'bottom',
@@ -36,7 +37,7 @@ export default class Projects extends Component {
 				github: 'https://leamsigc.com/',
 				roleDev: 'Solo Developer  ',
 				roleDsg: ' UX/UI Designer',
-				learnMore: '/Leamsigc',
+				learnMore: '/contact',
 				img: LeamsigcImg,
 				grid: 'noreverse',
 				position: 'top',
@@ -97,9 +98,9 @@ export default class Projects extends Component {
 										</a>
 									</div>
 									<div className="btn-container">
-										<a href={item.learnMore} className="btn btn-main btn-secondary">
+										<Link to={item.learnMore} className="btn btn-main btn-secondary">
 											Learn More
-										</a>
+										</Link>
 									</div>
 									<div className="portfolio__item--img">
 										<img src={item.img} className="portfolio__item--img___gif" />

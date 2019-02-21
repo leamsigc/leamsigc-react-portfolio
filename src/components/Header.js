@@ -1,35 +1,16 @@
 import React, { Component } from 'react';
 import headerBackgroundimg from '../images/leamsigcHomeBG.svg';
 import SVGWaves from './SVGWaves';
-import NavBar from './NavBar';
+import Button from './Button';
 export default class Header extends Component {
-	constructor() {
-		super();
-		this.state = {
-			menuStatus: 'close'
-		};
-	}
-
-	toggleMenu(menuState) {
-		this.setState({
-			menuStatus: this.state.menuStatus === 'close' ? 'open' : 'close'
-		});
-	}
 	render() {
 		return (
 			<div style={HeaderContainerStyle}>
-				<NavBar menuStatusClass={`${this.state.menuStatus === 'open' ? 'menu__open' : ''}`} />
 				<header style={headerStyle}>
 					<div className="logo__container">
 						Leam<span className="dark-letters">sigc</span>
 					</div>
-					<div
-						className={`toggle__container ${this.state.menuStatus === 'open' ? 'menu__open' : ''}`}
-						onClick={() => this.toggleMenu('open')}
-					>
-						<span className="menu__bar" />
-					</div>
-					<div className={`nav__background ${this.state.menuStatus === 'open' ? 'menu__open' : ''}`} />
+
 					<div className="container">
 						<h1 className="title">
 							Front & Back
@@ -42,9 +23,7 @@ export default class Header extends Component {
 							</p>
 						</h1>
 						<div className="btn-container">
-							<a href="#" className="btn btn-main">
-								Start Your Project
-							</a>
+							<Button />
 						</div>
 					</div>
 				</header>
