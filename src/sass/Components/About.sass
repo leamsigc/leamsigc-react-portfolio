@@ -14,11 +14,14 @@
 .title-sub
     font-size: 2rem
     font-weight: 900
+    @include respond-to(small)
+        font-size: 1.2rem
     &--secondary
         margin-top: 1rem
         display: block
         color: var(--main-color)
         font-weight: 400
+
 .description
     margin-top: 2rem
     width: 50%
@@ -27,6 +30,9 @@
     line-height: 1.5
     color: var(--silver-color)
     font-weight: 300
+    @include respond-to(small)
+        width: 100%
+        padding: 1rem 0.5rem
 .cards
     background: var(--white-color)
     margin: 6rem 0
@@ -34,6 +40,10 @@
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+    @include respond-to(medium)
+        justify-content: space-around
+    @include respond-to(small)
+        justify-content: center
     &__item
         background: var(--white-color)
         flex: 0 0 360px
@@ -42,6 +52,11 @@
         color: var(--dark-color)
         padding: 1rem
         transition: all 0.3s ease-in-out
+        @include respond-to(medium)
+            margin-top: 2rem
+        @include respond-to(small)
+            flex:  0 0 80%
+            margin-top: 1rem
         &:hover
           box-shadow: 0 40px 60px 0 rgba(169,171,193,.6)  
           transform: translateY(-10px)

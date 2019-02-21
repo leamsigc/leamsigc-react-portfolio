@@ -1,5 +1,7 @@
 header
     background-position:center
+    background-repeat: no-repeat
+    background-size: cover
     max-width: 100%
     width: 100vw
     padding: 2rem 1rem
@@ -8,8 +10,8 @@ header
     justify-content: flex-end
     align-items: center
     min-height: 95vh
-    @include respond-to(small)
-        opacity:0.4
+    
+        
 .logo__container
     position: absolute
     top: 3rem
@@ -93,12 +95,16 @@ header
     @include respond-to(small)
         font-size: 2.5rem
         width:100%
+        margin: 0 0 2rem
+        color: var(--dark-color)
     .letter-color
         color: var(--letter-color)
     .text-small
         font-size: 1rem
         line-height: 1.5
         font-weight: normal
+        @include respond-to(small)
+            display: none
 .btn-container
     width: 50%
     text-align: center

@@ -34,7 +34,10 @@ export default class Header extends Component {
 }
 
 const headerStyle = {
-	background: `url(${headerBackgroundimg})`
+	background: `url(${headerBackgroundimg})`,
+	backgroundPosition: 'center',
+	backgroundRepeat: 'no-repeat',
+	backgroundSize: 'cover'
 };
 const HeaderContainerStyle = {
 	position: 'relative',
