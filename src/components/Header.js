@@ -18,8 +18,8 @@ export default class Header extends Component {
 							<p className="text-small">
 								<br /> Need a website or a simple fix for your problem?
 								<br /> Get a beautiful and functional website
-								<br /> With you’r business goals on mint.
-								<br /> Web Design and Development.
+								<br /> tailored to your needs.
+								<br />
 							</p>
 						</h1>
 						<div className="btn-container">
@@ -34,10 +34,7 @@ export default class Header extends Component {
 }
 
 const headerStyle = {
-	background: `url(${headerBackgroundimg})`,
-	backgroundPosition: 'center',
-	backgroundSize: 'cover',
-	backgroundRepeat: 'no-repeat'
+	background: `url(${headerBackgroundimg})`
 };
 const HeaderContainerStyle = {
 	position: 'relative',

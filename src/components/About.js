@@ -9,7 +9,7 @@ export default function About() {
 			icon: Iconone,
 			title: 'User Experience ',
 			desc:
-				'Every pixel is designed to ensure your website is responsive, intuitive, and ease to use and help you reach and gain more revenue.'
+				'Every pixel is designed to ensure your website is responsive, intuitive, and easy to use , improve you reach and gain more revenue.'
 		},
 		{
 			icon: Icon2,
@@ -28,15 +28,15 @@ export default function About() {
 		<div className="about">
 			<section className="container">
 				<h2 className="title-sub">
-					GET MORE COSTUMER FROM THE DIGITAL WORLD
+					GET MORE COSTUMERS FROM THE DIGITAL WORLD
 					<br /> FOR YOU
 					<br />
 					<small className="title-sub--secondary"> Your digital secret weapon</small>
 				</h2>
 				<p className="description">
 					Start with the initial idea, wire-frames, design, development, optimization, launch and support afterwards.
-					Excel at building digital experiences, providing custom development, and pixel-perfect design for enterprises,
-					emerging companies and non-profits.
+					Excel at developing digital experiences, providing custom development, and pixel-perfect design for
+					enterprises, emerging companies and non-profits.
 				</p>
 				<div className="cards">
 					{cardsItems.map(item => {

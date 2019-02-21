@@ -1,3 +1,37 @@
 .footer
-    padding: 4rem 0
+    background: var(--dark-color)
+    text-align: center
+    padding: 6rem 0
     color: var(--main-color)
+    &__logo
+        font-weight: 900
+        letter-spacing: 2px
+        font-size: 4rem
+        text-transform: uppercase
+    h3
+        font-weight: 300
+        margin-bottom:2rem
+    &__social
+        display: flex
+        justify-content: center
+        align-items: center
+        &--link
+            display: flex
+            justify-content: center
+            align-items: center
+            background: var(--white-color)
+            border-radius: 50%
+            width: 50px
+            height: 50px
+            margin-right: 0.5rem
+            transition: all 0.3s ease-in-out
+            &:hover
+                transform: scale(1.1)
+                svg
+                    path
+                        fill: var(--main-color)
+            svg
+                width: 20px
+                height: 20px
+                path
+                    fill: var(--dark-color)
