@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import UserDetails from './UserDetails';
+import ProjectDetail from './ProjectDetail';
+import DisplayUserData from './DisplayUserData';
 
 export default class index extends Component {
 	state = {
@@ -7,20 +9,21 @@ export default class index extends Component {
 		name: '',
 		email: '',
 		projectDescription: '',
-		typeOfProject: ''
+		typeOfProject: '',
+		projectName: ''
 	};
 	//next step
 	nextStep = () => {
 		const { step } = this.state;
 		this.setState({
-			step: step + 1
+			step: step >= 3 ? 3 : step + 1
 		});
 	};
 	//go back
 	prevStep = () => {
 		const { step } = this.state;
 		this.setState({
-			step: step - 1
+			step: step <= 1 ? 1 : step - 1
 		});
 	};
 
@@ -29,17 +32,28 @@ export default class index extends Component {
 			[input]: e.target.value
 		});
 	};
+
+	checkSteps(step, values) {
+		if (step == 1) return <UserDetails values={values} textChange={this.handleChange} nextStep={this.nextStep} />;
+		else if (step === 2) {
+			return (
+				<ProjectDetail values={values} textChange={this.handleChange} nextStep={this.nextStep} goBack={this.prevStep} />
+			);
+		} else if (step == 3) {
+			return <DisplayUserData values={values} nextStep={this.nextStep} goBack={this.prevStep} />;
+		} else if (step == 3) {
+			return 'Thank you for your input..';
+		}
+	}
 	render() {
 		const { step } = this.state;
-		const { name, email, projectDescription, typeOfProject } = this.state;
-		const values = { name, email, projectDescription, typeOfProject };
+		const { name, email, projectDescription, typeOfProject, projectName } = this.state;
+		const values = { name, email, projectDescription, typeOfProject, projectName };
 		return (
-			<Fragment>
+			<div>
 				<h1>Form go here man</h1>
-				<form>
-					<UserDetails />
-				</form>
-			</Fragment>
+				<form>{this.checkSteps(step, values)}</form>
+			</div>
 		);
 	}
 }
