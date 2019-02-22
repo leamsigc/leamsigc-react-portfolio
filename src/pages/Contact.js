@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-
+import Form from '../components/Form';
 export default class Contact extends Component {
 	render() {
 		return (
 			<div className="about">
-				<h2 className="title-sub">Please dont hassitage in contact us Thank You </h2>
+				<h2>COMMUNICATION IS THE KEY FOR A GOOD RELATIONSHIP'S </h2>
+				<h3 className="title-sub--secondary">Let's get started! </h3>
+				<p className="description">
+					Please Take your time and briefly describe your project so I can better understand what you're looking for or
+					what is the scope of the project
+				</p>
+				<Form />
 			</div>
 		);
 	}
