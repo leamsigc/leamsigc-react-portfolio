@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import UserDetails from './UserDetails';
 import ProjectDetail from './ProjectDetail';
 import DisplayUserData from './DisplayUserData';
+import DisplayFormErrors from './DisplayFormErrors';
 
 export default class index extends Component {
 	state = {
@@ -10,7 +11,10 @@ export default class index extends Component {
 		email: '',
 		projectDescription: '',
 		typeOfProject: '',
-		projectName: ''
+		projectName: '',
+		FormErrors: { email: '', name: '' },
+		emailValid: false,
+		formValid: false
 	};
 	//next step
 	nextStep = () => {
@@ -28,6 +32,7 @@ export default class index extends Component {
 	};
 
 	handleChange = input => e => {
+		const name = e.target.name;
 		this.setState({
 			[input]: e.target.value
 		});
@@ -47,12 +52,16 @@ export default class index extends Component {
 	}
 	render() {
 		const { step } = this.state;
-		const { name, email, projectDescription, typeOfProject, projectName } = this.state;
+		const { name, email, projectDescription, typeOfProject, projectName, FormErrors } = this.state;
 		const values = { name, email, projectDescription, typeOfProject, projectName };
+
 		return (
 			<div>
 				<h1>Form go here man</h1>
-				<form>{this.checkSteps(step, values)}</form>
+				<form>
+					<DisplayFormErrors errors={FormErrors} />
+					{this.checkSteps(step, values)}
+				</form>
 			</div>
 		);
 	}

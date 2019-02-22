@@ -11,12 +11,19 @@ export default class UserDetails extends Component {
 		return (
 			<Fragment>
 				<div className="input_container">
-					<label>Name:</label>
-					<input type="text" placeholder="Name here" onChange={textChange('name')} value={values.name} />
+					<label htmlFor="name">Name:</label>
+					<input name="name" type="text" placeholder="Name here" onChange={textChange('name')} value={values.name} />
 				</div>
 				<div className="input_container">
-					<label>Email:</label>
-					<input type="email" placeholder="E-mail" onChange={textChange('email')} value={values.email} />
+					<label htmlFor="email">Email:</label>
+					<input
+						name="email"
+						required
+						type="email"
+						placeholder="E-mail"
+						onChange={textChange('email')}
+						value={values.email}
+					/>
 				</div>
 				<button onClick={this.continue}>Next</button>
 			</Fragment>
