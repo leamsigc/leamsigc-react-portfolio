@@ -7,9 +7,9 @@ export default class UserDetails extends Component {
 	};
 
 	render() {
-		const { values, textChange } = this.props;
+		const { values, textChange, active } = this.props;
 		return (
-			<Fragment>
+			<div className={`form__card ${active ? 'active' : ''}`}>
 				<div className="input_container">
 					<label htmlFor="name">Name:</label>
 					<input name="name" type="text" placeholder="Name here" onChange={textChange('name')} value={values.name} />
@@ -26,7 +26,7 @@ export default class UserDetails extends Component {
 					/>
 				</div>
 				<button onClick={this.continue}>Next</button>
-			</Fragment>
+			</div>
 		);
 	}
 }

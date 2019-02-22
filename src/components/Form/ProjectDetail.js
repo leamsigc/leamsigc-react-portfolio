@@ -10,29 +10,37 @@ export default class ProjectDetail extends Component {
 		this.props.goBack();
 	};
 	render() {
-		const { values, textChange } = this.props;
+		const { values, textChange, active } = this.props;
 		return (
-			<Fragment>
+			<div className={`form__card ${active ? 'active' : ''}`}>
 				<div className="input_container">
-					<label>Project:</label>
-					<input type="text" placeholder="Name here" onChange={textChange('projectName')} value={values.projectName} />
+					<label htmlFor="projectName">Project Name:</label>
+					<input
+						name="projectName"
+						type="text"
+						placeholder="Please enter a project name"
+						onChange={textChange('projectName')}
+						value={values.projectName}
+					/>
 				</div>
 				<div className="input_container">
-					<label>What are you hopping to accomplish let me know your expectation</label>
-					<input
+					<label htmlFor="projectDescription">What are you hopping to accomplish let me know your expectation</label>
+					<textArea
+						name="projectDescription"
 						type="text"
-						placeholder="Type your answer here .."
+						placeholder="Please enter a small descrition of the project.."
 						onChange={textChange('projectDescription')}
 						value={values.projectDescription}
 					/>
 				</div>
 				<div className="input_container">
-					<label>What type of projects are you looking for?</label>
+					<label htmlFor="typeOfProject">What type of projects are you looking for?</label>
 					<ul>
 						<li>New Project from scratch</li>
 						<li>Fix or enhance existing project</li>
 					</ul>
 					<input
+						name="typeOfProject"
 						type="text"
 						placeholder="Type your answer here .."
 						onChange={textChange('typeOfProject')}
@@ -41,7 +49,7 @@ export default class ProjectDetail extends Component {
 				</div>
 				<button onClick={this.goBack}>Prev</button>
 				<button onClick={this.continue}>Next</button>
-			</Fragment>
+			</div>
 		);
 	}
 }

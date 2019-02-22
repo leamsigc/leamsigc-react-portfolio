@@ -1,14 +1,12 @@
 import React from 'react';
 
 export default function DisplayFormErrors({ errors }) {
-	console.log(errors);
 	return (
-		<div>
+		<div className="form__error--container">
 			{Object.keys(errors).map((fieldName, i) => {
-				console.log(fieldName);
 				if (errors[fieldName] !== '') {
 					return (
-						<p key={i}>
+						<p key={i} className="form__error--item">
 							{fieldName} {errors[fieldName]}
 						</p>
 					);

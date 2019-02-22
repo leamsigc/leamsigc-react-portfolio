@@ -10,10 +10,10 @@ export default class ProjectDetail extends Component {
 		this.props.goBack();
 	};
 	render() {
-		const { values } = this.props;
+		const { values, active } = this.props;
 		const { name, email, projectDescription, typeOfProject, projectName } = values;
 		return (
-			<Fragment>
+			<div className={`form__card ${active ? 'active' : ''}`}>
 				<div className="display__user--data">
 					<p>Name:{name}</p>
 					<p>Your email:{email}</p>
@@ -23,7 +23,7 @@ export default class ProjectDetail extends Component {
 				</div>
 				<button onClick={this.goBack}>Prev</button>
 				<button onClick={this.continue}>Submit</button>
-			</Fragment>
+			</div>
 		);
 	}
 }

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Form from '../components/Form';
+import SVGWaves from '../components/SVGWaves';
 export default class Contact extends Component {
 	render() {
 		return (
-			<div className="about">
+			<div className="about contact__page">
+				<SVGWaves />
 				<h2>COMMUNICATION IS THE KEY FOR A GOOD RELATIONSHIP'S </h2>
 				<h3 className="title-sub--secondary">Let's get started! </h3>
 				<p className="description">

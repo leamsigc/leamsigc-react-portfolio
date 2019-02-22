@@ -3,6 +3,7 @@ import UserDetails from './UserDetails';
 import ProjectDetail from './ProjectDetail';
 import DisplayUserData from './DisplayUserData';
 import DisplayFormErrors from './DisplayFormErrors';
+import SVGWaves from '../SVGWaves';
 
 export default class index extends Component {
 	state = {
@@ -12,16 +13,19 @@ export default class index extends Component {
 		projectDescription: '',
 		typeOfProject: '',
 		projectName: '',
-		FormErrors: { email: '', name: '' },
-		emailValid: false,
-		formValid: false
+		FormErrors: { email: '', name: '' }
 	};
 	//next step
 	nextStep = () => {
 		const { step } = this.state;
-		this.setState({
-			step: step >= 3 ? 3 : step + 1
-		});
+		if (step == 1) {
+			console.log(this.validateEmail());
+			this.validateEmail() ? this.setState({ step: step + 1 }) : this.setState({ step: step });
+		} else {
+			this.setState({
+				step: step >= 3 ? 3 : step + 1
+			});
+		}
 	};
 	//go back
 	prevStep = () => {
@@ -32,20 +36,36 @@ export default class index extends Component {
 	};
 
 	handleChange = input => e => {
-		const name = e.target.name;
 		this.setState({
 			[input]: e.target.value
 		});
 	};
+	validateEmail = () => {
+		let emailValid = this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+		this.setState({
+			FormErrors: {
+				email: emailValid === null ? 'Enter a valid Email' : ''
+			}
+		});
+
+		return emailValid == null ? false : true;
+	};
 
 	checkSteps(step, values) {
-		if (step == 1) return <UserDetails values={values} textChange={this.handleChange} nextStep={this.nextStep} />;
+		if (step == 1)
+			return <UserDetails active={true} values={values} textChange={this.handleChange} nextStep={this.nextStep} />;
 		else if (step === 2) {
 			return (
-				<ProjectDetail values={values} textChange={this.handleChange} nextStep={this.nextStep} goBack={this.prevStep} />
+				<ProjectDetail
+					active={true}
+					values={values}
+					textChange={this.handleChange}
+					nextStep={this.nextStep}
+					goBack={this.prevStep}
+				/>
 			);
 		} else if (step == 3) {
-			return <DisplayUserData values={values} nextStep={this.nextStep} goBack={this.prevStep} />;
+			return <DisplayUserData active={true} values={values} nextStep={this.nextStep} goBack={this.prevStep} />;
 		} else if (step == 3) {
 			return 'Thank you for your input..';
 		}
@@ -56,12 +76,19 @@ export default class index extends Component {
 		const values = { name, email, projectDescription, typeOfProject, projectName };
 
 		return (
-			<div>
-				<h1>Form go here man</h1>
-				<form>
-					<DisplayFormErrors errors={FormErrors} />
-					{this.checkSteps(step, values)}
-				</form>
+			<div className="form__container">
+				<div className="form__container--box">
+					<ul>
+						<li>Step 1</li>
+						<li>Step 2</li>
+						<li>Step 3</li>
+					</ul>
+					<form className="form">
+						<DisplayFormErrors errors={FormErrors} />
+						{this.checkSteps(step, values)}
+					</form>
+				</div>
+				<SVGWaves />
 			</div>
 		);
 	}
