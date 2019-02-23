@@ -78,7 +78,7 @@ export default class index extends Component {
 		return (
 			<div className="form__container">
 				<div className="form__container--box">
-					<ul>
+					<ul className="form__container--steps">
 						<li>Step 1</li>
 						<li>Step 2</li>
 						<li>Step 3</li>
@@ -88,7 +88,7 @@ export default class index extends Component {
 						{this.checkSteps(step, values)}
 					</form>
 				</div>
-				<SVGWaves />
+				{/* <SVGWaves /> */}
 			</div>
 		);
 	}

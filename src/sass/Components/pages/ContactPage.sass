@@ -1,26 +1,52 @@
 .contact__page
     padding-bottom: 0
-    background: var(--white-color)
+    // background: var(--white-color)
     &>.svg__container
         z-index: 450
 .form__container
     position: relative
     min-height: 80vh
-    margin-top: 8rem
-    background: var(--main-color)
+    margin-top: 1rem
+    // background: var(--main-color)
     display: flex
     justify-content: center
     align-items: center
     z-index: 400
     &--box
-        background: var(--white-color)
-        padding: 4rem
-        box-shadow: 5px 10px 5px rgba(#000,0.3)
-        border-radius: 5px
+        margin-bottom: 8rem
+        // background: var(--white-color)
+    &--steps
+        list-style: none
+        background: #000
+        display: flex
+        justify-content: space-between
+        li
+            width: 80px
+            height: 80px
+            border-radius: 50%
+            line-height: 80px
+            color: var(--white-color)
+            font-weight: 700
+            background: var(--main-color) 
+        
 
     .form
+        margin-top: 2rem
         &__card
-            max-width: 500px
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            min-height: 50vh
+            min-width: 60vw
+            max-width: 800px
+
+            width: 100%
+            padding: 4rem
+            border-radius: 5px
+            background: var(--main-color)
+            box-shadow: 5px 10px 5px rgba(#000,0.3)
+            color: var(--white-color)
             padding: 5rem
             transition: all 0.5s ease-in
             
@@ -28,9 +54,11 @@
                 animation: bounce 0.5s ease-in-out 
                 @keyframes bounce
                     from
-                        transform:  translateX(3rem)
+                        transform:  translateX(4rem)
+                        opacity: 0.6
                     to
                         transform: translateX(0)
+                        opacity: 1
 .contact__page
     .form__container
         .svg__container

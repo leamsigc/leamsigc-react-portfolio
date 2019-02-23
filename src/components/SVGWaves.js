@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function SVGWaves() {
 	return (
-		<div className="svg__container" >
-			<svg xmlns="http://www.w3.org/2000/svg" width="110%" height="150" viewBox="0 0 2721.654 150.256">
+		<div className="svg__container">
+			<svg xmlns="http://www.w3.org/2000/svg" width="105%" height="220" viewBox="0 0 2721.654 180.256">
 				<defs />
 				<g id="Group_456" data-name="Group 456" transform="translate(62.218 -778)">
 					<g id="white_wave" data-name="white wave" transform="translate(-195.218 765)">
