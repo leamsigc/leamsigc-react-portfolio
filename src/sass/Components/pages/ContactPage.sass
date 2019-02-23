@@ -1,8 +1,13 @@
 .contact__page
     padding-bottom: 0
-    // background: var(--white-color)
+    background: linear-gradient(to bottom ,rgba(#625ACA,0.3),rgba(#AB5CC6,0.3)),url(https://subtlepatterns.com/patterns/sativa.png)
     &>.svg__container
-        z-index: 450
+        // z-index: 450
+    .description
+        
+        color: var(--silver-color)
+        font-weight: 400
+        margin-bottom: 4rem
 .form__container
     position: relative
     min-height: 80vh
@@ -13,26 +18,54 @@
     align-items: center
     z-index: 400
     &--box
-        margin-bottom: 8rem
+        margin-bottom: 10rem
         // background: var(--white-color)
     &--steps
-        list-style: none
-        background: #000
-        display: flex
-        justify-content: space-between
+        margin-bottom: 3rem
+        overflow: hidden
+        counter-reset: step
         li
-            width: 80px
-            height: 80px
-            border-radius: 50%
-            line-height: 80px
-            color: var(--white-color)
+            list-style: none    
+            width: 33.33%
+            color: var(--silver-color)
+            font-size: 10px
             font-weight: 700
-            background: var(--main-color) 
+            // background: var(--dark-color) 
+            position: relative
+            float: left
+            &:before
+                content: counter(step)
+                counter-increment: step
+                width: 40px
+                height: 40px
+                line-height: 40px
+                display: block
+                font-size: 10px
+                color: var(--white-color)
+                background: var(--silver-color)
+                border-radius: 50%
+                margin: 0 auto 5px auto
+                z-index: 2
+            &:after
+                content:  ''
+                width: 100%
+                height: 2px
+                background: var(--silver-color)
+                position: absolute
+                left: -50%
+                top: 20px
+                z-index: -1
+            &:first-child:after
+                content: none
+            &.active:before,
+            &.active:after
+                background: var(--main-color)
         
 
     .form
         margin-top: 2rem
         &__card
+            position: relative
             display: flex
             justify-content: center
             align-items: center
@@ -70,3 +103,20 @@
                 fill: rgba(#000000,0.5)               
             .cls-3 
                 fill: var(--main-color)
+.btn-svg
+    position: absolute
+    bottom: -1rem
+    display: block
+    background: var(--white-color)
+    border: 5px solid var(--main-color)
+    padding: 1rem
+    border-radius: 50%
+    &.reverse
+        // transform: rotate(180deg)
+        left: 40%
+    // z-index: 451
+.svg-icon
+    width: 20px
+    height: 20px
+    path
+       fill: var(--main-color)

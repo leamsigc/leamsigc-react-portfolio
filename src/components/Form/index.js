@@ -79,9 +79,9 @@ export default class index extends Component {
 			<div className="form__container">
 				<div className="form__container--box">
 					<ul className="form__container--steps">
-						<li>Step 1</li>
-						<li>Step 2</li>
-						<li>Step 3</li>
+						<li className="active">BUILD</li>
+						<li className={`${step === 2 ? 'active' : ''}`}>DESIGN</li>
+						<li className={`${step === 3 ? 'active' : ''}`}>CONFIGURE</li>
 					</ul>
 					<form className="form">
 						<DisplayFormErrors errors={FormErrors} />
