@@ -1,6 +1,8 @@
 .contact__page
     padding-bottom: 0
-    background: linear-gradient(to bottom ,rgba(#625ACA,0.3),rgba(#AB5CC6,0.3)),url(https://subtlepatterns.com/patterns/sativa.png)
+    background-color:  #f1e6f5
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23625aca' fill-opacity='0.6' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E")
+    // background: linear-gradient(to bottom ,rgba(#625ACA,0.3),rgba(#AB5CC6,0.3)),url(https://subtlepatterns.com/patterns/sativa.png)
     &>.svg__container
         // z-index: 450
     .description
@@ -71,16 +73,13 @@
             align-items: center
             flex-direction: column
             min-height: 50vh
-            min-width: 60vw
+            width: 60vw
             max-width: 800px
-
-            width: 100%
-            padding: 4rem
+            padding: 2rem 1rem 5rem
             border-radius: 5px
             background: var(--main-color)
             box-shadow: 5px 10px 5px rgba(#000,0.3)
             color: var(--white-color)
-            padding: 5rem
             transition: all 0.5s ease-in
             
             &.active
@@ -92,6 +91,23 @@
                     to
                         transform: translateX(0)
                         opacity: 1
+            .btn__container
+                position: absolute
+                bottom: -1rem
+                display: flex
+                justify-content: space-around
+            .display__user--data
+                width: 80%
+                text-align: left
+                .title-sub 
+                    width: 100%
+                    text-align: center
+                p
+                    font-weight: 500
+                    margin-bottom: 0.5rem
+                    padding: 1rem 0.5rem
+                hr
+                    color: rgba(#fff,0.5)
 .contact__page
     .form__container
         .svg__container
@@ -104,19 +120,61 @@
             .cls-3 
                 fill: var(--main-color)
 .btn-svg
-    position: absolute
+    margin-left: 1rem
+    width: 60px
+    height: 60px
     bottom: -1rem
     display: block
     background: var(--white-color)
     border: 5px solid var(--main-color)
     padding: 1rem
     border-radius: 50%
-    &.reverse
-        // transform: rotate(180deg)
-        left: 40%
-    // z-index: 451
+    &:before,&:after
+        bottom: 0
+        right: 0
+        margin: auto
+        border-radius: 50%
+        width: 100%
+        height: 100%
+
+    &:hover::after, 
+    &:hover::before 
+        transform: scale(1.5,1.5)
+    &.send
+        background: var(--secondary-color)
+        border-color: var(--secondary-color)
+        &:before,&:after
+            background: var(--secondary-color) 
+        .svg-icon
+            path
+                fill: var(--white-color)
 .svg-icon
     width: 20px
     height: 20px
     path
        fill: var(--main-color)
+.input__container
+    width: 100%
+    max-width: 500px
+    text-align: left
+    display: flex
+    flex-direction: column
+    &--label
+        margin-top: 2rem
+        font-size: 1.5rem
+        font-weight: 300
+        color: var(--white-color)
+    &--field
+        font-family: var(--main-font)
+        background: transparent
+        border: 1px solid transparent
+        border-block-end-color: var(--white-color)
+        padding: 1rem 0.5rem
+        color: var(--white-color)
+        font-size: 1rem
+        font-weight: 500
+    &--list
+        display: flex
+        justify-content: space-between
+        padding: 1rem 2rem
+        font-size: 0.8rem
