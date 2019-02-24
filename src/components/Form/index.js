@@ -23,7 +23,7 @@ export default class index extends Component {
 			this.validateEmail() ? this.setState({ step: step + 1 }) : this.setState({ step: step });
 		} else {
 			this.setState({
-				step: step >= 3 ? 3 : step + 1
+				step: step >= 4 ? 4 : step + 1
 			});
 		}
 	};
@@ -66,7 +66,7 @@ export default class index extends Component {
 			);
 		} else if (step == 3) {
 			return <DisplayUserData active={true} values={values} nextStep={this.nextStep} goBack={this.prevStep} />;
-		} else if (step == 3) {
+		} else if (step == 4) {
 			return 'Thank you for your input..';
 		}
 	}
@@ -78,10 +78,10 @@ export default class index extends Component {
 		return (
 			<div className="form__container">
 				<div className="form__container--box">
-					<ul className="form__container--steps">
+					<ul className="form__container--steps" style={{display: step >= 4 ? 'none':''}}>
 						<li className="active">BUILD</li>
-						<li className={`${step === 2 ? 'active' : ''}`}>DESIGN</li>
-						<li className={`${step === 3 ? 'active' : ''}`}>CONFIGURE</li>
+						<li className={`${step >= 2 ? 'active' : ''}`}>DESIGN</li>
+						<li className={`${step >=3 ? 'active' : ''}`}>CONFIGURE</li>
 					</ul>
 					<form className="form">
 						<DisplayFormErrors errors={FormErrors} />
