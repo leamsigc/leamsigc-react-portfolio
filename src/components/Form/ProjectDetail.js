@@ -34,7 +34,7 @@ export default class ProjectDetail extends Component {
 						className="input__container--field"
 						name="projectDescription"
 						type="text"
-						placeholder="Please enter a small descrition of the project.."
+						placeholder="Please enter a small description of the project.."
 						onChange={textChange('projectDescription')}
 						value={values.projectDescription}
 					/>
