@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="projectName" />
+        <input type="text" name="typeOfProject" />
+        <textarea name="projectDetails"></textarea>
+    </form>
     <div id="app"></div>
     <script src="./index.js"></script>
 </body>

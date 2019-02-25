@@ -5,6 +5,11 @@ import DisplayUserData from './DisplayUserData';
 import DisplayFormErrors from './DisplayFormErrors';
 import SVGWaves from '../SVGWaves';
 
+const encode = data => {
+	return Object.keys(data)
+		.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+		.join('&');
+};
 export default class index extends Component {
 	state = {
 		step: 1,
@@ -40,6 +45,20 @@ export default class index extends Component {
 			[input]: e.target.value
 		});
 	};
+	handleSubmit = e => {
+		fetch('/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: encode({ 'form-name': 'contact', ...this.state })
+		})
+			.then(() => {
+				// alert('Success!');
+				this.nextStep();
+			})
+			.catch(error => alert(error));
+
+		e.preventDefault();
+	};
 	validateEmail = () => {
 		let emailValid = this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
 		this.setState({
@@ -66,8 +85,6 @@ export default class index extends Component {
 			);
 		} else if (step == 3) {
 			return <DisplayUserData active={true} values={values} nextStep={this.nextStep} goBack={this.prevStep} />;
-		} else if (step == 4) {
-			return 'Thank you for your input..';
 		}
 	}
 	render() {
@@ -78,12 +95,13 @@ export default class index extends Component {
 		return (
 			<div className="form__container">
 				<div className="form__container--box">
-					<ul className="form__container--steps" style={{display: step >= 4 ? 'none':''}}>
+					<ul className="form__container--steps" style={{ display: step >= 4 ? 'none' : '' }}>
 						<li className="active">BUILD</li>
 						<li className={`${step >= 2 ? 'active' : ''}`}>DESIGN</li>
-						<li className={`${step >=3 ? 'active' : ''}`}>CONFIGURE</li>
+						<li className={`${step >= 3 ? 'active' : ''}`}>CONFIGURE</li>
 					</ul>
-					<form className="form">
+					{step === 4 ? 'Thank you for your input' : null}
+					<form className="form" name="contact" method="post" onSubmit={this.handleSubmit}>
 						<DisplayFormErrors errors={FormErrors} />
 						{this.checkSteps(step, values)}
 					</form>

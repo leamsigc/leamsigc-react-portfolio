@@ -30,14 +30,15 @@ export default class ProjectDetail extends Component {
 					<label className="input__container--label" htmlFor="projectDescription">
 						What are you hopping to accomplish let me know your expectation
 					</label>
-					<textArea
+					<textarea
 						className="input__container--field"
 						name="projectDescription"
 						type="text"
 						placeholder="Please enter a small description of the project.."
 						onChange={textChange('projectDescription')}
-						value={values.projectDescription}
-					/>
+					>
+						{values.projectDescription}
+					</textarea>
 				</div>
 				<div className="input__container">
 					<label className="input__container--label" htmlFor="typeOfProject">
