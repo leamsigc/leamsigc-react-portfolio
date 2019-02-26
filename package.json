@@ -5,7 +5,7 @@
 	"main": "./src/index.js",
 	"scripts": {
 		"start": "parcel src/index.html --open",
-		"build": "parcel build src/index.tml && echo '/*    /index.html   200' > dist/_redirects"
+		"build": "parcel build src/index.html && echo '/*    /index.html   200' > dist/_redirects"
 	},
 	"repository": {
 		"type": "git",
