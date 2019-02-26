@@ -4,18 +4,14 @@
 	"description": "Second version of my personal portfolio web ",
 	"main": "./src/index.js",
 	"scripts": {
-		"start": "parcel src/index.html --open"
+		"start": "parcel src/index.html --open",
+		"build": "parcel build src/index.tml && echo '/*    /index.html   200' > dist/_redirects"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/leamsigc/leamsigc-react-portfolio.git"
 	},
-	"keywords": [
-		"reactjs",
-		"react",
-		"parcel-react",
-		"parceljs-reactjs"
-	],
+	"keywords": ["reactjs", "react", "parcel-react", "parceljs-reactjs"],
 	"author": "Ismael garcia",
 	"license": "ISC",
 	"bugs": {
