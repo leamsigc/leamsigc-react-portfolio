@@ -12,7 +12,7 @@ export default class UserDetails extends Component {
 			<div className={`form__card ${active ? 'active' : ''}`}>
 				<div className="input__container">
 					<label className="input__container--label" htmlFor="name">
-						Who I'm build for?
+						For whom will I be building?
 					</label>
 					<input
 						className="input__container--field"
