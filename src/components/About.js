@@ -28,7 +28,7 @@ export default function About() {
 		<div className="about">
 			<section className="container">
 				<h2 className="title-sub">
-					GET MORE COSTUMERS FROM THE DIGITAL WORLD
+					GET MORE CUSTOMERS FROM THE DIGITAL WORLD
 					<br /> FOR YOU
 					<br />
 					<small className="title-sub--secondary"> Your digital secret weapon</small>

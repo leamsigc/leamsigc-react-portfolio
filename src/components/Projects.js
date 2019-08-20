@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
 import MendozaImg from '../images/MendozaRoofingWilmingtonNc.gif';
-import LeamsigcImg from '../images/leamsigcWebDeveloperDaytonaBeach.gif';
+import MendozaPicture from '../images/Mendoza.png';
+import SmartCellPicture from '../images/smartCell.png';
+import SmartCellGif from '../images/SmartCellRepairGif.gif';
+import LeamsigcGif from '../images/leamsigcWebDeveloperDaytonaBeach.gif';
+import LeamsigcImg from '../images/leamsigcGithub.png';
 import SVGWaves from './SVGWaves';
 import { Link } from 'react-router-dom';
 export default class Projects extends Component {
+	changeToGif = e => {
+		const img = e.target.firstChild;
+		const imgGifSource = img.getAttribute('data-gif');
+		img.setAttribute('src', imgGifSource);
+	};
+	changeSrcToImg = e => {
+		const img = e.target.firstChild;
+		const imgSource = img.getAttribute('data-img');
+		img.setAttribute('src', imgSource);
+	};
 	render() {
 		const portfolio = [
 			{
 				name: 'Smart Cell Repair',
 				roleDev: 'Solo Developer  ',
 				roleDsg: ' UX/UI Designer',
-				link: 'https://leamsigc.com/',
+				link: 'http://www.smartcell.repair',
 				github: 'https://github.com/leamsigc/smartCell',
 				learnMore: '/contact',
-				img: LeamsigcImg,
+				img: SmartCellPicture,
+				gif: SmartCellGif,
 				grid: 'noreverse',
 				position: 'top',
 				dec: '“Great communication and fast delivery. He is very committed to work and deliver quality code."'
@@ -25,7 +40,8 @@ export default class Projects extends Component {
 				roleDev: 'Solo Developer  ',
 				roleDsg: ' UX/UI Designer',
 				learnMore: '/contact',
-				img: MendozaImg,
+				gif: MendozaImg,
+				img: MendozaPicture,
 				grid: 'reverse',
 				position: 'bottom',
 				dec:
@@ -39,6 +55,7 @@ export default class Projects extends Component {
 				roleDsg: ' UX/UI Designer',
 				learnMore: '/contact',
 				img: LeamsigcImg,
+				gif: LeamsigcGif,
 				grid: 'noreverse',
 				position: 'top',
 				dec: '“Lightning fast & ultra responsive!"'
@@ -102,8 +119,17 @@ export default class Projects extends Component {
 											Learn More
 										</Link>
 									</div>
-									<div className="portfolio__item--img">
-										<img src={item.img} className="portfolio__item--img___gif" />
+									<div
+										className="portfolio__item--img"
+										onMouseLeave={this.changeSrcToImg}
+										onMouseOver={this.changeToGif}
+									>
+										<img
+											src={item.img}
+											className="portfolio__item--img___gif"
+											data-gif={item.gif}
+											data-img={item.img}
+										/>
 									</div>
 								</div>
 							</div>
