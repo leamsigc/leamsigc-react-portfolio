@@ -29,8 +29,8 @@ export default function AboutPage() {
 						<h2>
 							<strong className="big-text">Hello,</strong>
 							<small className="text-small">
-								<br />My name is Ismael Garcia. I'm a German based
-								<br />Front End Web Developer and Back End
+								<br />My name is Ismael Garcia. I'm a German-based
+								<br />Front End and Back End Web
 								<br />Developer building cool stuff.
 							</small>
 						</h2>
@@ -47,10 +47,10 @@ export default function AboutPage() {
 				<div className="text--container dark-bg">
 					<h3 className="title">ABOUT ME</h3>
 					<p className="text">
-						1 years of extensive professional experience and skills in HTML5, CSS3, Javascript, Reactjs, VuejS,
-						ASS/SCSS, Nodejs and specializing in PSD to HTML5 semantic conversion with keen attention to details.
-						Working knowledge of design tools such as Figma, Illustrator and Gimp Currently learning React Native and
-						WordPress theme development
+						1 year of extensive professional experience and providing skills in HTML5, CSS3, Javascript, Reactjs, VuejS,
+						SASS/SCSS, Nodejs. Specializing in PSD to HTML5 semantic conversion with keen attention to details. Working
+						knowledge of design tools such as Figma, Illustrator, Gimp. Currently learning React Native and WordPress
+						theme development
 					</p>
 					<p className="text">Always ask questions to feed the curiosity and learn something new on the way.</p>
 				</div>
@@ -90,26 +90,23 @@ export default function AboutPage() {
 						<h3 className="title">PLANNING</h3>
 
 						<p className="text">
-							The planning stage is arguably the most important, To sets the stage for the entire project. Client
-							comunnication and the attention to detail in the planing stage is key to a better experience for the
-							client.
+							The planning stage is arguably the most important, To sets the scope for the entire project. Communication
+							and the attention to detail in the planning stage is key to a better experience for the client.
 						</p>
 					</div>
 				</div>
 				<div className="text--container list__container ">
 					<h3 className="title text-right">THE PROCESS</h3>
 					<ul>
-						<li className="text text-right">
+						<li className="text">
 							Analyzing and dividing design mockups for creating appropriate UI components and architecting the styles
 							codebase.
 						</li>
-						<li className="text text-right">
-							Testing code in multiple browsers to ensure cross-browser compatibility.
-						</li>
-						<li className="text text-right">
+						<li className="text">Testing code in multiple browsers to ensure cross-browser compatibility.</li>
+						<li className="text">
 							Using JavaScript to leveraging common or complex interactive components of the web application.
 						</li>
-						<li className="text text-right">Collaborating with UI/UX designers and other Developers.</li>
+						<li className="text">Collaborating with UI/UX designers and other Developers.</li>
 					</ul>
 				</div>
 			</main>
