@@ -1,10 +1,10 @@
 import React from 'react';
 import SVGWave from '../components/SVGWaves';
+import ProfileImg from '../images/leamsigcProfile.png';
 
 export default function AboutPage() {
 	return (
 		<header className="header aboutpage">
-			<SVGWave />
 			<div className="container">
 				<div className="profile">
 					<img
@@ -22,6 +22,7 @@ export default function AboutPage() {
 					around the world.
 				</p>
 			</div>
+			<SVGWave />
 		</header>
 	);
 }
