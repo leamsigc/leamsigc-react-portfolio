@@ -1,26 +1,136 @@
+
 .aboutpage
-    background: #000
-    background: linear-gradient(to left , var(--main-color),var(--secondary-color))
-    .container
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
-        .profile
-            margin-bottom: 3rem
-            img
+    padding: 2rem
+    align-items: flex-start
+    flex-direction: column
+    justify-content: flex-start
+    @include respond-to(small)
+        padding: 0.5rem
+    .about__hero
+        background: linear-gradient(to left , var(--main-color),var(--secondary-color))
+        border-radius: 0.5rem
+        min-height: 50vh
+        .container
+            display: flex
+            justify-content: space-between
+            @include respond-to(small)
+                width: 100%
+                flex-direction: column-reverse
+        &--container___img
+           align-self: flex-end
+           margin-top: 2rem
+           width: 300px
+           height: 500px
+           .hero__img
+               width:100%
+               height: auto
+        
+        &--container___text
+            display: flex
+            flex-direction: column
+            align-items: flex-end
+            padding: 2rem 0
+            min-width: 50%
+            .svg__contaniner
+                width: 100px
+                height: 100px
+                padding: 0.5rem
+                margin-right: 2.5rem
+                background: #430895
                 border-radius: 50%
-                display: block
-        .title-sub
-            color: var(--white-color)
-            font-family: var(--main-font)
-            letter-spacing: 2px
-            margin: 0 0 2rem
-            font-weight: 300
-        p
-            max-width: 60%
-            text-align: center
-            font-weight: 300
+                svg
+                    width:100%
+                    height: 80px
+            @include respond-to(small)
+                align-items: center
+            h2
+                padding-top: 2rem
+                width: 100%
+                text-align: right
+                margin-bottom: 2rem
+                @include respond-to(small)
+                    text-align: center
+    .big-text
+        font-weight: 900
+        font-size: 3rem
+        letter-spacing: 2px
+        @include respond-to(small)
+            font-size: 2rem
+    .text-small
+        font-weight: 300
+        font-size: 1.2rem
+        @include respond-to(small)
+            font-size: 1rem
+    .svg__container
+        z-index: 2
     svg
         .cls-3,.cls-1
             fill: var(--dark-color)
+// About main CSS
+.about__main
+    background: var(--white-color)
+    color: var(--dark-color)
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    border-radius: 5px
+
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    
+    line-height: 1.5
+    position: relative
+    &.container
+        margin: -8rem auto 4rem
+        z-index: 1
+    .text--container
+        padding: 4rem 2rem
+        border-top-left-radius: 5px
+    .list__container
+        padding: 4rem 
+    .img--container
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-around
+        align-items: center
+        .btn.btn-secondary
+            background: var(--btn-secondary)
+            color: var(--white-color)
+            font-weight: 300
+    .btn-container
+        width: 100%
+        display: flex
+        justify-content: space-around
+    .title
+        width: 100%
+        text-align: left
+        font-weight: 600
+        margin-bottom: 1rem
+    .text-right
+        text-align: right
+    .text
+        font-weight: 300
+        margin-bottom: 2rem
+        text-align: justify
+    .dark-bg
+        background: var(--silver-color)
+        color: var(--white-low-text)
+    .topFix
+        width: 250px
+        position: absolute
+        top: -2.8rem
+        right: 1rem
+    .text-right
+        text-align: right
+
+    ul
+        list-style: none
+        li::before 
+            content: ""
+            background: $letter-color
+            display: inline-block
+            width: 1em
+            height: 1rem
+            border-radius: 50%
+            margin-left: -1em
+            position: absolute
+            top: 1rem
+            right: -1.5rem
