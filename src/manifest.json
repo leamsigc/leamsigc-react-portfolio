@@ -1,10 +1,9 @@
 {
-    "dir": "ltr",
     "lang": "English",
     "name": "Web Developer || Ismael Garcia",
     "scope": "/about",
     "display": "standalone",
-    "start_url": "https://leamsigc.com/",
+    "start_url": ".",
     "short_name": "leamsigc",
     "theme_color": "transparent",
     "description": "Daytona beach base Full stack Web Developer  Ismael Garcia ",
