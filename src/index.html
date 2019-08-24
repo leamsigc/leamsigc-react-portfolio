@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel='manifest' href='./manifest.json'>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control: max-age=3600" content="public">
+    <link rel="canonical" href="https://leamsigc.com/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web Developer || Ismael Garcia</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="app.css">
+
+
+    <!-- seo basic -->
+    <meta name="description"
+        content=" I am an exceptionally hard-working full stack web developer with a burning passion for technology.. After 8 years of working in restaurant business and interactive with my customers I learned that I am more into developing solution for small business">
+    <meta name="keyword"
+        content="ismael,garcia,web developer,SEO Orlando ,web developer Ismael garcia canseco ,oaxaca ,web design,daytona web developer">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@leamsigc">
+    <meta name="twitter:title" content="Ismael || Portfolio web ">
+    <meta name="twitter:description"
+        content=" I am an exceptionally hard-working full stack web developer with a burning passion for technology.. After 8 years of working in restaurant business and interactive with my customers I learned that I am more into developing solution for small business">
+    <meta name="twitter:creator" content="@leamsigc">
+    <meta name="twitter:image"
+        content="../src/images/leamsigcWebSite.png">
+    <meta property="og:title" content="Ismael||Portfolio Web">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://leamsigc.com">
+    <meta property="og:image"
+        content="../src/images/leamsigcWebSite.png">
+    <meta property="og:description"
+        content=" I am an exceptionally hard-working full stack web developer with a burning passion for technology.. After 8 years of working in restaurant business and interactive with my customers I learned that I am more into developing solution for small business">
+    <meta property="og:site_name" content="Ismael || Portfolio Web">
 </head>
 <body>
     <form name="contact" data-netlify='true' data-netlify-honeypot="bot-field" hidden>
@@ -17,6 +48,23 @@
         <textarea name="projectDetails"></textarea>
     </form>
     <div id="app"></div>
+    <script>
+    if ("serviceWorker" in navigator) {
+            if (navigator.serviceWorker.controller) {
+                console.log("[PWA Builder] active service worker found, no need to register");
+            } else {
+                // Register the service worker
+                navigator.serviceWorker
+                    .register("pwabuilder-sw.js", {
+                        scope: "./"
+                    })
+                    .then(function (reg) {
+                        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+                    });
+            }
+        }
+    </script>
     <script src="./index.js"></script>
+    <script src="./pwabuilder-sw.js"></script>
 </body>
 </html>

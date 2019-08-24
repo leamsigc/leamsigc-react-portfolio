@@ -66,7 +66,7 @@ export default class Projects extends Component {
 				<div className="container full">
 					{portfolio.map(item => {
 						return (
-							<div className={`container-portfolio ${item.grid === 'reverse' ? 'dark-svg' : ''}`}>
+							<div key={item.name} className={`container-portfolio ${item.grid === 'reverse' ? 'dark-svg' : ''}`}>
 								<SVGWaves />
 								<div className={`portfolio__item ${item.grid === 'reverse' ? 'reverse' : ''}`}>
 									<p className="portfolio__item--role">
@@ -115,7 +115,7 @@ export default class Projects extends Component {
 										</a>
 									</div>
 									<div className="btn-container">
-										<Link to={item.learnMore} className="btn btn-main btn-secondary">
+										<Link to={item.learnMore} className="btn btn-main">
 											Learn More
 										</Link>
 									</div>
@@ -129,6 +129,7 @@ export default class Projects extends Component {
 											className="portfolio__item--img___gif"
 											data-gif={item.gif}
 											data-img={item.img}
+											alt={`${item.name} ${item.roleDev} ${item.roleDsg}`}
 										/>
 									</div>
 								</div>

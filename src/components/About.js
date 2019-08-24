@@ -41,9 +41,9 @@ export default function About() {
 				<div className="cards">
 					{cardsItems.map(item => {
 						return (
-							<div className="cards__item">
+							<div className="cards__item" key={item.title}>
 								<div className="cards__item--icon">
-									<img src={item.icon} />
+									<img src={item.icon} alt={item.desc} />
 								</div>
 								<h4 className="cards__item--title">{item.title}</h4>
 								<p className="cards__item--desc">{item.desc}</p>
